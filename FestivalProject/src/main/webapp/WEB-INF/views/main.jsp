@@ -27,9 +27,6 @@
         		margin: 0px;
         		padding: 0px;
         	}
-        	.dd {
-        		color: gray;
-        	}
         </style>
     </head>
     <body id="page-top">
@@ -47,8 +44,8 @@
 	나중에 검사
 	<c:if test="{empty SID}">
  --%>
-                        <li class="nav-item dd"><a class="nav-link" href="/festival/member/login.fes">로그인</a></li>
-                        <li class="nav-item dd"><a class="nav-link" href="">회원가입</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="loginbtn">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
 <%--
 	</c:if>
 	<c:if test="${not empty SID}">
@@ -57,8 +54,8 @@
                         <li class="nav-item"><a class="nav-link" href="">마이페이지</a></li>
     </c:if>
 --%>
-                        <li class="nav-item"><a class="nav-link" href="">축제정보</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">리뷰게시판</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="boardbtn">리뷰게시판</a></li>
                     </ul>
                 </div>
             </div>
