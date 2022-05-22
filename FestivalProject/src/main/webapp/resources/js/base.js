@@ -13,10 +13,13 @@ $(document).ready(function() {
 	})
 	// 리뷰게시판
 	$('#boardbtn').click(function() {
-		$('#boardbtn').attr('href', '/festival/board/board.fes');
+		$('#boardbtn').attr('href', '/festival/review/rboard.fes');
 	});
 	// 로고클릭
 	$('#logo').click(function() {
 		$('#logo').attr('href', '/festival/');
 	});
+	$('#mybtn').click(function() {
+		$('#mybtn').attr('href', '/festival/mypage/mypage.fes');
+	})
 });
