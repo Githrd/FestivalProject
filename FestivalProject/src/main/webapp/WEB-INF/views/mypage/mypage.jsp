@@ -7,7 +7,7 @@
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
        <meta name="description" content="" />
        <meta name="author" content="" />
-       <title>축제정보 페이지</title>
+       <title>마이페이지</title>
        <!-- Favicon-->
        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
        <!-- Font Awesome icons (free version)-->
@@ -64,7 +64,9 @@
     
    <div class="w3-content w3-center mx650">
    		<div class="w3-col" style="margin-top: 200px">
-	   		<h1>축제정보</h1>
+	   		<h1>마이페이지</h1>
+	   		<h1>즐겨찾기목록</h1>
+	   		<h1>내가쓴후기</h1>
 	    </div>
    </div>
     

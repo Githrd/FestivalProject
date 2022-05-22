@@ -1,4 +1,4 @@
-package com.githrd.festival.controller.board;
+package com.githrd.festival.controller.mypage;
 
 import java.io.IOException;
 
@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.githrd.festival.controller.FesInter;
 
-public class BoardForm implements FesInter {
+public class MyPage implements FesInter {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "/board/board";
+		String view = "/mypage/mypage";
 		return view;
 	}
 

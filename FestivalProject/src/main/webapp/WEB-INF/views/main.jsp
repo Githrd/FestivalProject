@@ -49,9 +49,11 @@
 <%--
 	</c:if>
 	<c:if test="${not empty SID}">
-						<li class="nav-item"><a class="nav-link" href="">${SID}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">로그아웃</a></li>	
-                        <li class="nav-item"><a class="nav-link" href="">마이페이지</a></li>
+--%>
+						<li class="nav-item"><a class="nav-link" href="">tmddus</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="logoutbtn">로그아웃</a></li>	
+                        <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>
+<%--    
     </c:if>
 --%>
                         <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
