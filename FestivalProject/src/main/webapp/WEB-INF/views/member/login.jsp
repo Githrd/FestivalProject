@@ -18,13 +18,13 @@
 <body>
 	<div class="w3-content w3-center">
 		<a href="/festival/"><img src="/festival/resources/img/logo.png" class="blogo"></a>
-		<div class="container">
-	 <div class="col-10 col-md-10 col-lg-8">
+		<div class="container w3-center w3-padding">
+	 <div class="box w600 w3-margin-top w3-border w3-padding">
     <h2>로그인</h2>
 	<form method="POST" action="" id="frm" name="frm">
     <div class="row">
         <div class="col-md-12 form-group">
-            <input type="text" id="id" name="id" class="form-control" placeholder="아이디를 입력해주세요">
+            <input type="text" id="id" name="id" class="pd20 form-control" placeholder="아이디를 입력해주세요">
         </div>
     </div>
     <div class="row">
@@ -37,8 +37,8 @@
             <div class="w3-button btn-block btn-login w3-black" id="lbtn">로그인</div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
+    <div class="">
+        <div class="fl">
             <a href="https://1.envato.market/ydVvD">회원가입</a>
             <a href="https://1.envato.market/ydVvD">아이디 찾기</a>
             <a href="https://1.envato.market/ydVvD">비밀번호 찾기</a>

@@ -82,7 +82,7 @@
                         <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
 	</c:if>
 	<c:if test="${not empty SID}">
-						<li class="nav-item"><a class="nav-link" href="">${SID}</a></li>
+						<li class="nav-item"><a class="nav-link" href="">${NAME} 님</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="logoutbtn">로그아웃</a></li>	
                         <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>
     </c:if>

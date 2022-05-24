@@ -24,8 +24,11 @@ public class LoginProc implements FesInter{
 		MemberDao mDao = new MemberDao();
 		int cnt = mDao.getLogin(id, pw);
 		
-		if(cnt == 1) { //로그인 성공
+		String name = mDao.getName(id);
+		
+		if(cnt == 1 && name != null) { //로그인 성공
 			req.getSession().setAttribute("SID", id);
+			req.getSession().setAttribute("NAME", name);
 		} else { //로그인 실패
 			view = "/festival/member/login.fes";
 		}
