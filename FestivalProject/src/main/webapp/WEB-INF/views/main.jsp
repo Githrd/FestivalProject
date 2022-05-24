@@ -77,22 +77,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-<%--
-	나중에 검사
-	<c:if test="{empty SID}">
- --%>
+	<c:if test="${empty SID}">
                         <li class="nav-item"><a class="nav-link" href="" id="loginbtn">로그인</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
-<%--
 	</c:if>
 	<c:if test="${not empty SID}">
---%>
-						<li class="nav-item"><a class="nav-link" href="">tmddus</a></li>
+						<li class="nav-item"><a class="nav-link" href="">${SID}</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="logoutbtn">로그아웃</a></li>	
                         <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>
-<%--    
     </c:if>
---%>
                         <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="boardbtn">리뷰게시판</a></li>
                     </ul>
