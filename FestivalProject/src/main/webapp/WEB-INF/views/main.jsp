@@ -39,7 +39,6 @@
         	.fe {
         		width: 300px;
         		height: auto;
-        		margin-top: 50px;
         	}
         	  .star {
     position: relative;
@@ -157,28 +156,19 @@
         </div>
 		
 		<hr>
-
-
-
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+<c:forEach var="data" items="${INFO}">
+			
+            <div class=" w3-center gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+            	<a href="">
+            	<div style="display: flex; height: 60px; margin-top:20px; align-items: center; justify-content: center;" class="w3-center">
+	            	<h4 style="padding-top:auto;">${data.fname}</h4>
+            	</div>
                 <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
+                            	<p class="pi">${data.sdate} ~ ${data.edate}</p>
+                            	<p class="pi">${data.place}</p>
+				</a>
             </div>
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
-            </div>
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
-            </div>
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
-            </div>
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
-            </div>
-            <div class="gallery_product col-lg-4 col-mdㅋ-4 col-sm-4 col-xs-6 filter hdpe">
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
-            </div>
-            
+</c:forEach>          
         </div>
             <a href="" style="float: right; font-size: 14pt;" class="w3-margin"><strong>더보기 >></strong></a>
         	
@@ -191,6 +181,8 @@
         	<hr>
         	
         	  <div class="container py-5">
+        	  
+        	  
   <div class="row py-5">
     <div class="col-sm">
       <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
@@ -202,14 +194,15 @@
 		<div class='star-rating'>
 			<span style="width: 80%"></span>
 		</div>
-	</div>     
-      <p class="text-justify">첫번째 후기</p>
-      <p class="text-justify">두번째 후기</p>
-      <p class="text-justify">세번째 후기</p>
-      <p class="text-justify">네번째 후기</p>
-      <p class="text-justify">다섯번째 후기</p>
+	</div>
+<c:forEach var="data" items="${REVIEW}">   
+	<div>
+      <a href=""><p class="text-justify">${data.title}</p></a>
+	</div>  
+</c:forEach>
     </div>
   </div>
+  
   <div class="row py-5">
     <div class="col-sm">
       <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
@@ -222,12 +215,13 @@
 		<div class='star-rating'>
 			<span style="width: 80%"></span>
 		</div>
-	</div>     
-      <p class="text-justify">첫번째 후기</p>
-      <p class="text-justify">두번째 후기</p>
-      <p class="text-justify">세번째 후기</p>
-      <p class="text-justify">네번째 후기</p>
-      <p class="text-justify">다섯번째 후기</p>
+	</div>
+	<c:forEach var="data" items="${REVIEW}">   
+	<div>
+      <a href=""><p class="text-justify">${data.title}</p></a>
+	</div>  
+</c:forEach>    
+
     </div>
   </div>
               <a href="" style="float: right; font-size: 14pt;"><strong>더보기 >></strong></a>

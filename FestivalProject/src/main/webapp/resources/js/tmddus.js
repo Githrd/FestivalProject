@@ -43,4 +43,12 @@ $(document).ready(function() {
 		$('#frm').attr('action', '/festival/member/joinProc.fes');
 		$('#frm').submit();
 	});
+	
+	$('#rwritebtn').click(function() {
+		$(location).attr('href', '/festival/review/rboardWrite.fes');
+	});
+	
+	$('#reditbtn').click(function() {
+		$(location).attr('href', '/festival/review/rboardEdit.fes');
+	})
 });
