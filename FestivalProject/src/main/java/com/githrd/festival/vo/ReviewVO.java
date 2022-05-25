@@ -1,21 +1,26 @@
 package com.githrd.festival.vo;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
 
 public class ReviewVO {
 	private int rno, fno;
 	private float score;
-	private String title, body, writer, wdate, fname;
-	
+	private String title, body, writer, wdate, fname, savename;
+	private Date ww;
+
+	public String getSavename() {
+		return savename;
+	}
+	public void setSavename(String savename) {
+		this.savename = savename;
+	}
 	public String getFname() {
 		return fname;
 	}
 	public void setFname(String fname) {
 		this.fname = fname;
 	}
-	private Date ww;
-	
 	public int getRno() {
 		return rno;
 	}
@@ -67,5 +72,12 @@ public class ReviewVO {
 	}
 	public void setWw(Date ww) {
 		this.ww = ww;
+	}
+	
+	@Override
+	public String toString() {
+		return "ReviewVO [rno=" + rno + ", fno=" + fno + ", score=" + score + ", title=" + title + ", body=" + body
+				+ ", writer=" + writer + ", wdate=" + wdate + ", fname=" + fname + ", savename=" + savename + ", ww="
+				+ ww + "]";
 	}
 }
