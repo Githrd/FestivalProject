@@ -23,13 +23,14 @@ public class ReviewDao {
 	
 	// 메인페이지 리뷰 보여주는 함수
 	
-	public ArrayList<ReviewVO> getMainReview() {
+	public ArrayList<ReviewVO> getMainReview(int no) {
 		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		con = db.getCon();
 		String sql = rSQL.getSQL(rSQL.SEL_MAIN_REVIEW);
-		stmt = db.getSTMT(con);
+		pstmt = db.getPSTMT(con, sql);
 		try {
-			rs = stmt.executeQuery(sql);
+			pstmt.setInt(1, no);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				ReviewVO rVO = new ReviewVO();
 				rVO.setRno(rs.getInt("review_no"));
@@ -44,25 +45,28 @@ public class ReviewDao {
 			e.printStackTrace();
 		} finally {
 			db.close(rs);
-			db.close(stmt);
+			db.close(pstmt);
 			db.close(con);
 		}
 		return list;
 	}
 	
 	// 메인페이지 후기 평점 함수
-	public float getAvgScore(int fno) {
-		float score = 0;
-		
+	public ArrayList<ReviewVO> getAvgScore() {
+		ArrayList<ReviewVO> list = new ArrayList<ReviewVO>();
 		con = db.getCon();
 		String sql = rSQL.getSQL(rSQL.SEL_AVG_SCORE);
-		pstmt = db.getPSTMT(con, sql);
+		stmt = db.getSTMT(con);
 		try {
-			pstmt.setInt(1, fno);
-			
-			rs = pstmt.executeQuery();
-			rs.next();
-			score = rs.getFloat("score");
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				ReviewVO rVO = new ReviewVO();
+				rVO.setScore(rs.getFloat("score"));
+				rVO.setFno(rs.getInt("fno"));
+				rVO.setSavename(rs.getString("img"));
+		
+				list.add(rVO);
+			}
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -70,7 +74,7 @@ public class ReviewDao {
 			db.close(pstmt);
 			db.close(con);
 		}
-		return score;
+		return list;
 	}
 	
 }

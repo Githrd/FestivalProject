@@ -135,13 +135,13 @@
     <br/>
 		<div class="row justify-content-center">
                  <div class="col-12 col-md-10 col-lg-8">
-                     <form>
+                     <form method="POST" id="frm" name="frm">
                          <div class="card-body row no-gutters align-items-center">
                              <div class="col">
-                                 <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="키워드를 입력해주세요!	">
+                                 <input id="search" class="form-control form-control-lg form-control-borderless" type="search" placeholder="키워드를 입력해주세요!">
                              </div>
                              <div class="col-auto w3-margin-left">
-                                 <button class="btn btn-lg btn-success" type="submit">검색</button>
+                                 <div class="w3-button w100" id="sbtn">검색</div>
                              </div>
                          </div>
                      </form>
@@ -182,7 +182,6 @@
         	
         	  <div class="container py-5">
         	  
-        	  
   <div class="row py-5">
     <div class="col-sm">
       <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
@@ -190,42 +189,44 @@
     </div>
        <div class="col-sm">
 	<div class="wrap-star">
-		<h2>평점 : 4.0</h2>
+		<h2>평점 : ${RINFO[0].score}</h2>
 		<div class='star-rating'>
-			<span style="width: 80%"></span>
+			<span style="width: ${RINFO[0].score*20}%"></span>
 		</div>
 	</div>
-<c:forEach var="data" items="${REVIEW}">   
+ 
 	<div>
+<c:forEach var="data" items="${REVIEW1}">
       <a href=""><p class="text-justify">${data.title}</p></a>
-	</div>  
 </c:forEach>
+	</div>  
+
     </div>
   </div>
   
-  <div class="row py-5">
+   <div class="row py-5">
     <div class="col-sm">
       <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
 
     </div>
-    
-    <div class="col-sm">
+       <div class="col-sm">
 	<div class="wrap-star">
-		<h2>평점 : 4.0</h2>
+		<h2>평점 : ${RINFO[1].score}</h2>
 		<div class='star-rating'>
-			<span style="width: 80%"></span>
+			<span style="width: ${RINFO[1].score*20}%"></span>
 		</div>
 	</div>
-	<c:forEach var="data" items="${REVIEW}">   
+ 
+<c:forEach var="data" items="${REVIEW2}">
 	<div>
       <a href=""><p class="text-justify">${data.title}</p></a>
+</c:forEach>
 	</div>  
-</c:forEach>    
 
     </div>
   </div>
-              <a href="" style="float: right; font-size: 14pt;"><strong>더보기 >></strong></a>
-  </div>
+
+    </div>
   
   </div>
         

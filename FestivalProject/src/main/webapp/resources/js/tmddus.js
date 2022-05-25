@@ -50,5 +50,9 @@ $(document).ready(function() {
 	
 	$('#reditbtn').click(function() {
 		$(location).attr('href', '/festival/review/rboardEdit.fes');
-	})
+	});
+	
+	$('#sbtn').click(function() {
+		$(location).attr('href', '/festival/info/finfo.fes');
+	});
 });

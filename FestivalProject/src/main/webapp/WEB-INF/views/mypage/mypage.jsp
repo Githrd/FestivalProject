@@ -20,6 +20,8 @@
        <link rel="stylesheet" type="text/css" href="/festival/resources/css/w3.css"/>
        <script type="text/javascript" src="/festival/resources/js/jquery-3.6.0.min.js"></script>
        <script type="text/javascript" src="/festival/resources/js/base.js"></script>
+       <script type="text/javascript" src="/festival/resources/js/mypage.js"></script>
+       
        <style type="text/css">   
      	.logo {
      		margin: 0px;
@@ -39,22 +41,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-<%--
-	나중에 검사
-	<c:if test="{empty SID}">
- --%>
+
+	<c:if test="${empty SID}">
+
                     <li class="nav-item"><a class="nav-link" href="" id="loginbtn">로그인</a></li>
                     <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
-<%--
+
 	</c:if>
 	<c:if test="${not empty SID}">
---%>
+
 						<li class="nav-item"><a class="nav-link" href="">tmddus</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="logoutbtn">로그아웃</a></li>	
-                        <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>
-<%--    
+                        <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>   
     </c:if>
---%>
+
                     <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
                     <li class="nav-item"><a class="nav-link" href="" id="boardbtn">리뷰게시판</a></li>
                 </ul>
@@ -64,9 +64,11 @@
     
    <div class="w3-content w3-center mx650">
    		<div class="w3-col" style="margin-top: 200px">
-	   		<h1>마이페이지</h1>
-	   		<h1>즐겨찾기목록</h1>
-	   		<h1>내가쓴후기</h1>
+   		          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+						<li class="nav-item"><a class="nav-link" href="" id="myinfobtn">내 정보</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="mybookmarkbtn">즐겨찾기 목록</a></li>	
+                        <li class="nav-item"><a class="nav-link" href="" id="myreviewbtn">내가 쓴 후기</a></li>
+                  </ul>
 	    </div>
    </div>
     

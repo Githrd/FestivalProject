@@ -18,13 +18,15 @@ public class Main implements FesInter {
 		ArrayList<FestivalVO> Info = fDao.getFestivalInfo();
 		
 		ReviewDao rDao = new ReviewDao();
-		ArrayList<ReviewVO> Review = rDao.getMainReview();
-		
-		// 축제번호 어케 넘겨옴 ??
-		//float score = rDao.getAvgScore("");
+		ArrayList<ReviewVO> Rinfo = rDao.getAvgScore();
+				
+		ArrayList<ReviewVO> Review1 = rDao.getMainReview(Rinfo.get(0).getFno());
+		ArrayList<ReviewVO> Review2 = rDao.getMainReview(Rinfo.get(1).getFno());
 		
 		req.setAttribute("INFO", Info);
-		req.setAttribute("REVIEW", Review);
+		req.setAttribute("RINFO", Rinfo);
+		req.setAttribute("REVIEW1", Review1);
+		req.setAttribute("REVIEW2", Review2);
 		
 		return view;
 	}
