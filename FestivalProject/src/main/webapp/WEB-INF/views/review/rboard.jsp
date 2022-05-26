@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -120,37 +121,30 @@ body {
 </head>
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand logo" id="logo" href=""><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-<%--
-	나중에 검사
-	<c:if test="{empty SID}">
- --%>
-                    <li class="nav-item"><a class="nav-link" href="" id="loginbtn">로그인</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
-<%--
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand logo" href="/festival/"><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+	<c:if test="${empty SID}">
+                        <li class="nav-item"><a class="nav-link" href="" id="loginbtn">로그인</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="joinbtn">회원가입</a></li>
 	</c:if>
 	<c:if test="${not empty SID}">
---%>
-						<li class="nav-item"><a class="nav-link" href="">tmddus</a></li>
+						<li class="nav-item"><a class="nav-link" href="">${NAME} 님</a></li>
                         <li class="nav-item"><a class="nav-link" href="" id="logoutbtn">로그아웃</a></li>	
                         <li class="nav-item"><a class="nav-link" href="" id="mybtn">마이페이지</a></li>
-<%--    
     </c:if>
---%>
-                    <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
-                    <li class="nav-item"><a class="nav-link" href="" id="boardbtn">리뷰게시판</a></li>
-                </ul>
+                        <li class="nav-item"><a class="nav-link" href="" id="infobtn">축제정보</a></li>
+                        <li class="nav-item"><a class="nav-link" href="" id="boardbtn">리뷰게시판</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     
 <div class="w3-content w3-center mx650 mt">
    	<!-- 검색창 
