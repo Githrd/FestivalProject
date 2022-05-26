@@ -3,6 +3,9 @@ $(document).ready(function() {
 	$('#loginbtn').click(function() {
 		$('#loginbtn').attr('href', '/festival/member/login.fes');
 	});
+	$('#loginbtn2').click(function() {
+		$(location).attr('href', '/festival/member/login.fes');
+	});
 	// 회원가입
 	$('#joinbtn').click(function() {
 		$('#joinbtn').attr('href', '/festival/member/join.fes');
@@ -21,5 +24,5 @@ $(document).ready(function() {
 	});
 	$('#mybtn').click(function() {
 		$('#mybtn').attr('href', '/festival/mypage/mypage.fes');
-	})
+	});
 });

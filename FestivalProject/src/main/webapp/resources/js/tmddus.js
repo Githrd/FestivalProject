@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	var idck = false;
+	
 	$('#lbtn').click(function() {
 		var sid = $('#id').val();
 		var spw = $('#pw').val();
@@ -36,8 +38,11 @@ $(document).ready(function() {
 		var pwpat = /^[a-zA-Z0-9]{5,20}$/;
 		
 		var test = $('#birth').val();
-		alert(test);
-		
+
+		if(!idck) {
+			alert('아이디 중복확인을 해주세요');
+			return;
+		}
 		
 		// 정규표현식 검사
 		$('#frm').attr('action', '/festival/member/joinProc.fes');
@@ -54,5 +59,57 @@ $(document).ready(function() {
 	
 	$('#sbtn').click(function() {
 		$(location).attr('href', '/festival/info/finfo.fes');
+	});
+	
+	$('#id').keyup(function() {
+		idck = false;
+	});
+	
+	$('#idck').click(function() {
+		var sid = $('#id').val();
+		
+		if(!sid) {
+			$('#id').focus();
+			return;
+		}
+		
+		$.ajax({
+			url: '/festival/member/idCheck.fes',
+			type: 'post',
+			dataType: 'json',
+			data: {
+				id: sid
+			},
+			success: function(data) {
+				var result = data.result;
+				
+				if(result == 'OK') {
+					idck = true;
+					alert("사용 가능한 아이디입니다.");					
+				} else {
+					idck = false
+					alert("사용 불가능한 아이디입니다.");
+				}
+			},
+			error: function() {
+				alert('### 통신 에러 ###');
+			}
+			
+		});
+	});
+	
+	$('#findbtn1').click(function() {
+		$('#frm').attr('action', '/festival/member/findidProc.fes');
+		$('#tel').prop('disabled', true);
+		$('#frm').submit();
+	});
+		$('#findbtn2').click(function() {
+		$('#frm').attr('action', '/festival/member/findidProc2.fes');
+		$('#mail').prop('disabled', true);
+		$('#frm').submit();
+	});
+	$('#findbrn3').click(function() {
+		$('#frm').attr('action', '/festival/member/findpwProc.fes');
+		$('#frm').submit();
 	});
 });

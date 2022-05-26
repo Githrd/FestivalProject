@@ -26,7 +26,6 @@ public class ReviewSQL {
 			buff.append("    festival_review r, festival_img_file i ");
 			buff.append("WHERE ");
 			buff.append("    r.isshow = 'Y' ");
-			buff.append("    AND ROWNUM < 3 ");
 			buff.append("GROUP BY ");
 			buff.append("    r.fest_no ");
 			buff.append("ORDER BY ");
