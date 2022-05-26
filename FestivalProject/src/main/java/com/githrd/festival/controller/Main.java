@@ -16,14 +16,19 @@ public class Main implements FesInter {
 		
 		FestivalDao fDao = new FestivalDao();
 		ArrayList<FestivalVO> Info = fDao.getFestivalInfo();
+		System.out.println(Info);
+		req.setAttribute("INFO", Info);
 		
 		ReviewDao rDao = new ReviewDao();
 		ArrayList<ReviewVO> Rinfo = rDao.getAvgScore();
-				
+		System.out.println(Rinfo);
+
+		if(Rinfo.isEmpty() == true) {
+			return view;
+		}
 		ArrayList<ReviewVO> Review1 = rDao.getMainReview(Rinfo.get(0).getFno());
 		ArrayList<ReviewVO> Review2 = rDao.getMainReview(Rinfo.get(1).getFno());
 		
-		req.setAttribute("INFO", Info);
 		req.setAttribute("RINFO", Rinfo);
 		req.setAttribute("REVIEW1", Review1);
 		req.setAttribute("REVIEW2", Review2);

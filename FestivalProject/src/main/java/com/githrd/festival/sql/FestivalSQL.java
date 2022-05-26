@@ -7,16 +7,20 @@ public class FestivalSQL {
 		StringBuffer buff = new StringBuffer();
 		switch(code) {
 		case SEL_MAIN_INFO:
-			buff.append("SELECT ");
-			buff.append("    fest_no, fest_name, open_place, sdate, edate, ");
+			buff.append("SELECT   fest_no, fest_name, open_place, sdate, edate, ");
 			buff.append("    TO_DATE(sdate, 'YY/MM/DD') - TO_DATE(sysdate, 'YY/MM/DD') diff ");
-			buff.append("FROM ");
-			buff.append("    festival_info ");
-			buff.append("WHERE ");
-			buff.append("    TO_DATE(sdate, 'YY/MM/DD') - TO_DATE(sysdate, 'YY/MM/DD') > 0 ");
-			buff.append("    AND ROWNUM < 7 ");
-			buff.append("order by ");
-			buff.append("    diff asc ");
+			buff.append("FROM ( ");
+			buff.append("    SELECT ");
+			buff.append("        fest_no, fest_name, open_place, sdate, edate, ");
+			buff.append("        TO_DATE(sdate, 'YY/MM/DD') - TO_DATE(sysdate, 'YY/MM/DD') diff ");
+			buff.append("    FROM ");
+			buff.append("        festival_info ");
+			buff.append("    WHERE ");
+			buff.append("        TO_DATE(sdate, 'YY/MM/DD') - TO_DATE(sysdate, 'YY/MM/DD') > 0 ");
+			buff.append("    order by ");
+			buff.append("        diff asc ");
+			buff.append("    ) ");
+			buff.append("WHERE rownum < 7 ");
 			break;
 		}
 		return buff.toString();

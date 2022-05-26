@@ -141,7 +141,7 @@
                                  <input id="search" class="form-control form-control-lg form-control-borderless" type="search" placeholder="키워드를 입력해주세요!">
                              </div>
                              <div class="col-auto w3-margin-left">
-                                 <div class="w3-button w100" id="sbtn">검색</div>
+                                 <div class="w3-button w100" id="sbtn" style="background-color:#ffc800">검색</div>
                              </div>
                          </div>
                      </form>
@@ -163,7 +163,7 @@
             	<div style="display: flex; height: 60px; margin-top:20px; align-items: center; justify-content: center;" class="w3-center">
 	            	<h4 style="padding-top:auto;">${data.fname}</h4>
             	</div>
-                <img src="/festival/resources/img/poster1.jpg" class="img-responsive fe">
+                <img src="/festival/resources/img/${data.fno}.jpg" class="img-responsive fe">
                             	<p class="pi">${data.sdate} ~ ${data.edate}</p>
                             	<p class="pi">${data.place}</p>
 				</a>
@@ -184,7 +184,7 @@
         	  
   <div class="row py-5">
     <div class="col-sm">
-      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
+      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
 
     </div>
        <div class="col-sm">
@@ -206,7 +206,7 @@
   
    <div class="row py-5">
     <div class="col-sm">
-      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:200px; height: auto;">
+      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
 
     </div>
        <div class="col-sm">
