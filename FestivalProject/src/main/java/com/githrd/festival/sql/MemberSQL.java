@@ -3,6 +3,10 @@ package com.githrd.festival.sql;
 public class MemberSQL {
 	public final int SEL_LOGIN_CNT	= 1001;
 	public final int SEL_NAME_INFO	= 1002;
+	public final int SEL_ID_CHECK	= 1003;
+	public final int SEL_FIND_MAIL	= 1004;
+	public final int SEL_FIND_TEL	= 1005;
+	public final int SEL_FIND_PW	= 1006;
 	
 	public final int ADD_MEMBER		= 3001;
 	
@@ -26,6 +30,45 @@ public class MemberSQL {
 			buff.append("    member ");
 			buff.append("WHERE ");
 			buff.append("    user_id = ? ");
+			break;
+			
+		case SEL_ID_CHECK:
+			buff.append("SELECT ");
+			buff.append("    COUNT(*) cnt ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("WHERE ");
+			buff.append("    user_id = ? ");
+			break;
+			
+		case SEL_FIND_MAIL:
+			buff.append("SELECT ");
+			buff.append("    user_id ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("WHERE ");
+			buff.append("    user_mail = ? ");
+			buff.append("    AND isshow = 'Y' ");
+			break;
+			
+		case SEL_FIND_TEL:
+			buff.append("SELECT ");
+			buff.append("    user_id ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("WHERE ");
+			buff.append("    user_tel = ? ");
+			buff.append("    AND isshow = 'Y' ");
+			break;
+			
+		case SEL_FIND_PW:
+			buff.append("SELECT ");
+			buff.append("    COUNT(*) cnt ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("WHERE ");
+			buff.append("    user_id = ? ");
+			buff.append("    AND isshow = 'Y' ");
 			break;
 			
 		case ADD_MEMBER:

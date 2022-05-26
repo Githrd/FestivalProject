@@ -92,4 +92,92 @@ public class MemberDao {
 		}
 		return cnt;
 	}
+	
+	// 아이디 중복검사 처리 함수
+	public int idCheck(String id) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_ID_CHECK);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, id);			
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+ 		} catch(Exception e) {
+ 			e.printStackTrace();
+ 		} finally {
+ 			db.close(rs);
+ 			db.close(pstmt);
+ 			db.close(con);
+ 		}
+		return cnt;
+	}
+	
+	// 아이디 찾기 처리 함수(이메일)
+	public String getIdbyMail(String mail) {
+		String id = null;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_FIND_MAIL);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, mail);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				id = rs.getString("user_id");
+			} else {
+				id = null;
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return id;
+	}
+	// 아이디 찾기 처리 함수(핸드폰번호)
+	public String getIdbyTel(String tel) {
+		String id = null;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_FIND_TEL);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, tel);
+			rs = pstmt.executeQuery();
+			rs.next();
+			if(rs == null) {
+				return id;
+			}
+			id = rs.getString("user_id");
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return id;
+	}
+	
+	public int getIdbyPw(String id) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.SEL_FIND_PW);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			rs.next();
+			cnt = rs.getInt("cnt");
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
 }

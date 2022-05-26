@@ -39,9 +39,9 @@
     </div>
     <div class="">
         <div class="fl">
-            <a href="https://1.envato.market/ydVvD">회원가입</a>
-            <a href="https://1.envato.market/ydVvD">아이디 찾기</a>
-            <a href="https://1.envato.market/ydVvD">비밀번호 찾기</a>
+            <a href="/festival/member/join.fes">회원가입</a>
+            <a href="/festival/member/findid.fes">아이디 찾기</a>
+            <a href="/festival/member/findpw.fes">비밀번호 찾기</a>
         </div>
     </div>
 	</form>
