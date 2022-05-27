@@ -34,7 +34,7 @@ public class ReviewDao {
 			while(rs.next()) {
 				ReviewVO rVO = new ReviewVO();
 				rVO.setRno(rs.getInt("review_no"));
-				rVO.setFname(rs.getString("fest_name"));
+				rVO.setFname(rs.getString("fname"));
 				rVO.setTitle(rs.getString("review_title"));
 				rVO.setBody(rs.getString("review_body"));
 				rVO.setWriter(rs.getString("review_wname"));
@@ -62,8 +62,8 @@ public class ReviewDao {
 			while(rs.next()) {
 				ReviewVO rVO = new ReviewVO();
 				rVO.setScore(rs.getFloat("score"));
-				rVO.setFno(rs.getInt("fno"));
-				rVO.setSavename(rs.getString("img"));
+				rVO.setFno(rs.getInt("fest_no"));
+				//rVO.setSavename(rs.getString("img"));
 		
 				list.add(rVO);
 			}

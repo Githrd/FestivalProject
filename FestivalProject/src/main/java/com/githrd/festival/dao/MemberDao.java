@@ -123,11 +123,11 @@ public class MemberDao {
 		try {
 			pstmt.setString(1, mail);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				id = rs.getString("user_id");
-			} else {
-				id = null;
+			rs.next();
+			if(rs == null) {
+				return id;
 			}
+			id = rs.getString("user_id");
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -161,6 +161,7 @@ public class MemberDao {
 		return id;
 	}
 	
+	// 비밀번호 찾기 처리 함수
 	public int getIdbyPw(String id) {
 		int cnt = 0;
 		con = db.getCon();
@@ -175,6 +176,25 @@ public class MemberDao {
 			e.printStackTrace();
 		} finally {
 			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		return cnt;
+	}
+	
+	// 비밀번호 변경 처리 함수
+	public int changePw(String id, String pw) {
+		int cnt = 0;
+		con = db.getCon();
+		String sql = mSQL.getSQL(mSQL.UPDATE_PW);
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			cnt = pstmt.executeUpdate();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
 			db.close(pstmt);
 			db.close(con);
 		}

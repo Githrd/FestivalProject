@@ -1,3 +1,13 @@
+/**
+ *  축제 후기(Review) SQL 클래스이다.
+ * @author	이승연
+ * @since	2022/05/22
+ * @version	v.1.0
+ * 			작업이력 ]
+ * 				2022.05.22	-	클래스제작
+ * 								담당자 : 이승연
+ *
+ */
 package com.githrd.festival.sql;
 
 public class ReviewSQL {
@@ -9,25 +19,25 @@ public class ReviewSQL {
 		switch(code) {
 		case SEL_MAIN_REVIEW:
 			buff.append("SELECT ");
-			buff.append("    review_no, fest_name, review_title, review_body, review_wname, review_score ");
+			buff.append("    review_no, fname, review_title, review_body, review_wname, review_score ");
 			buff.append("FROM ");
-			buff.append("    FESTIVAL_INFO i, FESTIVAL_REVIEW r ");
+			buff.append("    festival_info , festival_review ");
 			buff.append("WHERE ");
-			buff.append("    i.FEST_NO = r.FEST_NO ");
-			buff.append("    AND i.fest_no = ? ");
-			buff.append("    AND ROWNUM < 6 ");
+			buff.append("    fno = fest_no ");
+			buff.append("    AND fno = ? ");
+			buff.append("    AND ROWNUM <6 ");
 			break;
 		
 		case SEL_AVG_SCORE:
 			buff.append("SELECT ");
-			buff.append("    ROUND(AVG(review_score),1) score, r.fest_no fno ");
-			buff.append("    ,(SELECT fest_img_sname FROM festival_img_file i WHERE r.fest_no = i.fest_no) img ");
-			buff.append("FROM  ");
-			buff.append("    festival_review r, festival_img_file i ");
+			buff.append("    ROUND(AVG(review_score), 1) score, fest_no ");
+			//buff.append("    ,(SELECT fest_img_sname FROM festival_img_file i WHERE r.fest_no = i.fest_no) img ");
+			buff.append("FROM ");
+			buff.append("    festival_review ");
 			buff.append("WHERE ");
-			buff.append("    r.isshow = 'Y' ");
+			buff.append("    isshow = 'Y' ");
 			buff.append("GROUP BY ");
-			buff.append("    r.fest_no ");
+			buff.append("    fest_no ");
 			buff.append("ORDER BY ");
 			buff.append("    DBMS_RANDOM.random() ");
 			break;

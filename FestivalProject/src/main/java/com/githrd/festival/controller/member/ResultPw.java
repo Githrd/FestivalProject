@@ -1,10 +1,10 @@
 /**
- * 	이 클래스는 회원가입 페이지를 반환해주는 클래스이다.
+ * 	이 클래스는 비밀번호 찾기 페이지를 반환해주는 클래스이다.
  * @author	이승연
- * @since	2022/05/26
+ * @since	2022/05/27
  * @version	v.1.0
  * 			작업이력 ]
- * 				2022.05.26	-	클래스제작
+ * 				2022.05.27	-	클래스제작
  * 								담당자 : 이승연
  *
  */
@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.githrd.festival.controller.FesInter;
 
-public class JoinForm implements FesInter {
+public class ResultPw implements FesInter {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "/member/join";
+		String view = "/member/resultpw";
 		return view;
 	}
 

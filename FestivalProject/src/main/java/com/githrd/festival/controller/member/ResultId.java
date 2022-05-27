@@ -1,3 +1,13 @@
+/**
+ * 	이 클래스는 아이디 찾기 페이지를 반환해주는 클래스이다.
+ * @author	이승연
+ * @since	2022/05/26
+ * @version	v.1.0
+ * 			작업이력 ]
+ * 				2022.05.26	-	클래스제작
+ * 								담당자 : 이승연
+ *
+ */
 package com.githrd.festival.controller.member;
 
 import java.io.IOException;

@@ -1,3 +1,19 @@
+/**
+ * 	이 클래스는 메인화면 페이지를 반환해주는 클래스이다.
+ * @author	이승연
+ * @since	2022/05/26
+ * @version	v.1.0
+ * 			작업이력 ]
+ * 				2022.05.22	-	클래스제작
+ * 								담당자 : 이승연
+ * 
+ * 				2022.05.25 	-	축제 정보, 축제 후기 DB 처리 후 출력
+ * 								담당자 : 이승연
+ * 
+ * 				2022.05.26	-	후기가 없을 경우(예외 처리)
+ * 								담당자 : 이승연
+ *
+ */
 package com.githrd.festival.controller;
 
 import java.io.*;
@@ -16,7 +32,6 @@ public class Main implements FesInter {
 		
 		FestivalDao fDao = new FestivalDao();
 		ArrayList<FestivalVO> Info = fDao.getFestivalInfo();
-		System.out.println(Info);
 		req.setAttribute("INFO", Info);
 		
 		ReviewDao rDao = new ReviewDao();
