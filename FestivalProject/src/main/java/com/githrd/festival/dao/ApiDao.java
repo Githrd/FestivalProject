@@ -10,6 +10,17 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * 이 문서는 Api 작업후 DB처리를 위해 만들어 놓은
+ * DAO 문서 입니다
+ *
+ * @author 조희덕
+ * @since 2022-05-25
+ *
+ *              작업 이력 ]
+ *                  2022.05.25  담당자 : 조희덕
+*                               -클래스 제작
+ */
 public class ApiDao {
     private FesDBCP db;
     private Connection con;

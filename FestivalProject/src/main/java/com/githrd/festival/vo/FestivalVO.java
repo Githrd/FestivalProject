@@ -3,6 +3,13 @@ package com.githrd.festival.vo;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 이 문서는 Api 작업후 vo에 담아 처리하기위해
+ * 작성한 vo문서 입니다
+ * @author 조희덕
+ * @since  2022.05.25
+ */
+
 public class FestivalVO {
     private int fno, ffee;
     private String fname, foplace, sdate, edate, fcontext, hostinst, hostorgan, ftel, fhaddr, froadaddr, latitude, logitude;

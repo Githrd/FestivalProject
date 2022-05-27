@@ -5,7 +5,9 @@ package com.githrd.festival.controller.api;
  * form 태그의 벨류로 받아서 string 분할 작업 후
  * Vo에 심고 dao 작업으로 db에 저장하는 역할을 한다
  *
- * @
+ * @author 조희덕
+ * @since 2022.05.25
+ *
  */
 
 import com.githrd.festival.controller.FesInter;

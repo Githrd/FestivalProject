@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 조희덕
+  Date: 2022.05.23
+  목적: api 통신을 통해 데이터를 받아오기위한 뷰
+--%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

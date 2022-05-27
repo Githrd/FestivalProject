@@ -7,6 +7,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+/**
+ * 이문서는 api 자바 통신을 하기위해 만든 문서입니다
+ *
+ * @author 조희덕
+ * @since  2022.05.23
+ */
+
 public class ApiExplorer {
     public static void main(String[] args) throws IOException {
         StringBuilder urlBuilder = new StringBuilder("http://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api"); /*URL*/

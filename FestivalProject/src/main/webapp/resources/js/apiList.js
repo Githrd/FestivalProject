@@ -1,3 +1,10 @@
+/**
+ * Ajax 통신을 이용한 공공데이터 작업 후
+ * 뷰에 심어주고 컨트롤러에 보내주는 작업
+ *
+ * @author 조희덕
+ * @since  2022.05.24
+*/
 $(document).ready(function () {
     $('#getlist').click(function (){
         $.ajax({
