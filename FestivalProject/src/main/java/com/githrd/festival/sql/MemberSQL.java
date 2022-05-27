@@ -1,3 +1,13 @@
+/**
+ *  멤버(member) SQL 클래스이다.
+ *  ");author	이승연
+ *  ");since	2022/05/22
+ *  ");version	v.1.0
+ * 			작업이력 ]
+ * 				2022.05.22	-	클래스제작
+ * 								담당자 : 이승연
+ *
+ */
 package com.githrd.festival.sql;
 
 public class MemberSQL {
@@ -7,6 +17,8 @@ public class MemberSQL {
 	public final int SEL_FIND_MAIL	= 1004;
 	public final int SEL_FIND_TEL	= 1005;
 	public final int SEL_FIND_PW	= 1006;
+	
+	public final int UPDATE_PW		= 2001;
 	
 	public final int ADD_MEMBER		= 3001;
 	
@@ -69,6 +81,15 @@ public class MemberSQL {
 			buff.append("WHERE ");
 			buff.append("    user_id = ? ");
 			buff.append("    AND isshow = 'Y' ");
+			break;
+			
+		case UPDATE_PW:
+			buff.append("UPDATE ");
+			buff.append("    member ");
+			buff.append("SET ");
+			buff.append("    user_pw = ? ");
+			buff.append("WHERE ");
+			buff.append("    user_id = ? ");
 			break;
 			
 		case ADD_MEMBER:

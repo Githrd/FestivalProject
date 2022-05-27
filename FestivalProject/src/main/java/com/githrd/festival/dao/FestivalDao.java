@@ -31,8 +31,8 @@ public class FestivalDao {
 			rs = stmt.executeQuery(sql);
 			while(rs.next()) {
 				FestivalVO fVO = new FestivalVO();
-				fVO.setFno(rs.getInt("fest_no"));
-				fVO.setFname(rs.getString("fest_name"));
+				fVO.setFno(rs.getInt("fno"));
+				fVO.setFname(rs.getString("fname"));
 				fVO.setPlace(rs.getString("open_place"));
 				fVO.setSs(rs.getDate("sdate"));
 				fVO.setSdate();

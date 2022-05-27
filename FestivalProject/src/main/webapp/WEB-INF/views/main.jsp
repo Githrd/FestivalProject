@@ -1,3 +1,17 @@
+<!-- 
+/**
+ *  메인 페이지
+ * @author	이승연
+ * @since	2022/05/22
+ * @version	v.1.0
+ * 			작업이력 ]
+ * 				2022.05.22	-	jsp 제작
+ * 								담당자 : 이승연
+ *				2022.05.25	-	기능 구현
+ * 								담당자 : 이승연
+ *
+ */
+ -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -106,7 +120,7 @@
   </ul>
 
   <!-- The slideshow -->
-  <div class="carousel-inner" style="margin-top: 90px;">
+  <div class="carousel-inner" style="margin-top: 100px;">
     <div class="carousel-item active">
       <img src="/festival/resources/img/poster1.jpg" width="500px" height="auto" alt="Los Angeles">
     </div>
@@ -150,9 +164,9 @@
 		</div>
         <!-- 이번주에 열리는 축제-->
       <div class="container">
-        <div class="row">
+        <div class="row" style="align-items: center">
         <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="gallery-title w3-margin">이번주에 열리는 축제</h1>
+            <h1 class="gallery-title w3-margin">곧 열리는 축제</h1>
         </div>
 		
 		<hr>
@@ -163,7 +177,9 @@
             	<div style="display: flex; height: 60px; margin-top:20px; align-items: center; justify-content: center;" class="w3-center">
 	            	<h4 style="padding-top:auto;">${data.fname}</h4>
             	</div>
-                <img src="/festival/resources/img/${data.fno}.jpg" class="img-responsive fe">
+            	<div class="w3-border w3-padding">
+                	<img src="/festival/resources/img/${data.fno}.jpg" onerror="this.src='/festival/resources/img/poster.png'" class="img-responsive fe">
+            	</div>
                             	<p class="pi">${data.sdate} ~ ${data.edate}</p>
                             	<p class="pi">${data.place}</p>
 				</a>
@@ -184,7 +200,11 @@
         	  
   <div class="row py-5">
     <div class="col-sm">
-      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
+    <div  class="w3-border w3-padding">
+      <a href="">
+	      <img src="/festival/resources/img/${RINFO[0].fno}.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
+      </a>
+    </div>
 
     </div>
        <div class="col-sm">
@@ -197,7 +217,7 @@
  
 	<div>
 <c:forEach var="data" items="${REVIEW1}">
-      <a href=""><p class="text-justify">${data.title}</p></a>
+      <a href=""><p class="text-justify">${data.title}<span style="float: right;">${data.writer}</span></p></a>
 </c:forEach>
 	</div>  
 
@@ -206,8 +226,11 @@
   
    <div class="row py-5">
     <div class="col-sm">
-      <img src="/festival/resources/img/poster2.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
-
+       <div  class="w3-border w3-padding">	
+    	<a href="">
+	      <img src="/festival/resources/img/${RINFO[1].fno}.jpg" alt="" class="img-fluid img-circle" style="width:250px; height: auto;">
+    	</a>
+	</div>
     </div>
        <div class="col-sm">
 	<div class="wrap-star">
@@ -217,9 +240,9 @@
 		</div>
 	</div>
  
-<c:forEach var="data" items="${REVIEW2}">
 	<div>
-      <a href=""><p class="text-justify">${data.title}</p></a>
+<c:forEach var="data" items="${REVIEW2}">
+      <a href=""><p class="text-justify">${data.title}<span style="float: right;">${data.writer}</span></p></a>
 </c:forEach>
 	</div>  
 

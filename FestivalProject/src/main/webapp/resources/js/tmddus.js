@@ -108,8 +108,23 @@ $(document).ready(function() {
 		$('#mail').prop('disabled', true);
 		$('#frm').submit();
 	});
-	$('#findbrn3').click(function() {
+	$('#findbtn3').click(function() {
+		var txt = $('#fid').val();
+		alert(txt);
 		$('#frm').attr('action', '/festival/member/findpwProc.fes');
 		$('#frm').submit();
+	});
+	$('#findbtn4').click(function() {
+		var pw = $('#fpw').val();
+		var pwck = $('#fpwck').val();
+		
+		if(pw != pwck) {
+			alert('비밀번호가 다릅니다.');
+			return;
+		}
+		$('#frm').attr('action', '/festival/member/changePwProc.fes');
+		$('#fpwck').prop('disabled', true);
+		$('#frm').submit();
+				
 	});
 });
