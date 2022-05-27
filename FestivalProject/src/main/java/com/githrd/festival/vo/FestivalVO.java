@@ -7,6 +7,18 @@ public class FestivalVO {
 	private int fno, road, fee, latitude, longitude;
 	private String fname, sdate, edate, content, place, host, ftel, href;
 	private Date ss, ee;
+
+
+//
+	private int rsco;
+	private String idir;
+
+	public int getRsco() {return rsco;}
+	public void setRsco(int rsco) {this.rsco = rsco;}
+	public String getIdir() {return idir;}
+	public void setIdir(String idir) {this.idir = idir;}
+//
+
 	
 	public Date getSs() {
 		return ss;
