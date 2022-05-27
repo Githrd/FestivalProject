@@ -1,0 +1,64 @@
+# festival Project 요청 설계
+###작성자 : 김수경###
+=========================================================================
+####################### 마이페이지 요청 설계 ######################
+=========================================================================
+--------------------------------------------------------------
+# 마이페이지 보기 요청 
+요청내용	: 	/festival/main.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.MyPage
+뷰			:	/WEB-INF/views/festival/mypage.jsp
+--------------------------------------------------------------
+
+# 내정보 폼보기 요청 
+요청내용	: 	/festival/member/myInfo.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyInfo
+뷰			:	/WEB-INF/views/festival/mypage/mypage.jsp
+--------------------------------------------------------------
+
+
+=========================================================================
+####################### 리뷰게시판 요청 설계 ######################
+=========================================================================
+
+-------------------------------------------------------------------------
+# 리뷰게시판 리스트 폼보기 요청
+요청내용	: 	/festival/mypage/MyReview.fes
+파라미터	:	[nowPage]
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReview
+뷰			:	/WEB-INF/views/guestBoard/myreview.jsp
+-------------------------------------------------------------------------
+# 리뷰게시판 글쓰기 폼보기 요청
+요청내용	: 	/festival/mypage/myreviewwrite.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReviewWrite
+뷰			:	/WEB-INF/views/mypage/MyReviewWrite.jsp
+-------------------------------------------------------------------------
+# 리뷰게시판 글등록 처리 요청
+요청내용	: 	/festival/mypage/MyReviewWrite.fes
+파라미터	:	body, nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReviewWriteProc
+뷰			:	redirect ]
+						성공 :	/festival/mypage/myreview.fes 
+						실패 :	//festival/mypage/myreview.fes?nowPage=???
+-------------------------------------------------------------------------
+
+=========================================================================
+####################### 즐겨찾기 요청 설계 ######################
+=========================================================================
+
+-------------------------------------------------------------------------
+# 즐겨찾기 리스트 폼보기 요청
+요청내용	: 	/festival/mypage/mybookmark.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyBookMark
+뷰			:	/WEB-INF/views/mypage/mybookmark.jsp
+-------------------------------------------------------------------------
+# 즐겨찾기 등록 처리 요청
+요청내용	: 	/festival/mypage/mybookmark.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyBookMarkProc
+뷰			:	/WEB-INF/views/mypage/mybookmark.jsp
+-------------------------------------------------------------------------
