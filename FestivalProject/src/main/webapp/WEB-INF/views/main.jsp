@@ -186,7 +186,7 @@
             </div>
 </c:forEach>          
         </div>
-            <a href="" style="float: right; font-size: 14pt;" class="w3-margin"><strong>더보기 >></strong></a>
+            <a href="/festival/info/finfo.fes" style="float: right; font-size: 14pt;" class="w3-margin"><strong>더보기 >></strong></a>
         	
         
         </div>

@@ -7,7 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.githrd.festival.controller.FesInter;
+/*즐겨찾기 폼보기 컨트롤러
 
+2022/05/29
+
+코드 작성자 : 김수경
+
+*/
 public class MyBookMark implements FesInter {
 
 	@Override

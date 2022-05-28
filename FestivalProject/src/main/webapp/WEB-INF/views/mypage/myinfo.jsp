@@ -5,6 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%--
+			회원정보 보기 뷰
+					
+								2022/05/29
+								
+							코드 작성자 : 김수경
+ --%>
        <meta charset="utf-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
        <meta name="description" content="" />
@@ -28,6 +35,10 @@
      		margin: 0px;
      		padding: 0px;
      	}
+	.avtimg {
+		width: 100px;
+		height: 100px;
+	}
      	</style>
 	
 </head>
@@ -70,37 +81,42 @@
 	<div class="row login_box" style="margin-top: 150px; margin-bottom: 500px;">
 	    <div class="col-md-12 col-xs-12" align="center">
 			<h5>환영합니다</h5>
-            <div class="outter"><img src="/festival/resources/img/avatar/img_avatar1.png<%-- ${DATA.username} --%>" class="image-circle"/></div>   
-				<h4><span class="">회원이름</span><span class="w3-rest w3-center" id="name">${DATA.name}</span></h4>
+            <div class="outter"><img src="/festival/resources/img/img_avatar1.png<%-- ${DATA.username} --%>" class="image-circle avtimg"/></div>   
+				<h4><span class="">아이디 : </span><span class="w3-rest w3-center" id="name">${DATA.id}</span></h4>
 	    </div>
         <div class="col-md-6 col-xs-6 follow line" align="center">
 <h4><span class="">작성한 리뷰 수</span>
 	<br>
-	<span class="" id="mno">${DATA.revcount}데이터</span></h4>
+	<span class="" id="mno"><%-- ${DATA.revcount}--%>데이터</span></h4>
         </div>
         <div class="col-md-6 col-xs-6 follow line" align="center">
 <h4><span class="">즐겨찾기 수</span>
 	<br>
-	<span class="" id="mno">${DATA.bmcount}데이터</span></h4>
+	<span class="" id="mno"><%-- ${DATA.bmcount}--%>데이터</span></h4>
         </div>
         
         <div class="col-md-12 col-xs-12 login_control">
                 
+
                 <div class="control">
-                    <div class="label">ID</div>
-                    <input type="text" class="form-control" value="${DATA.id}"/>
+                     <div class="label">이름</div>
+                    <input type="text" class="form-control" value="${DATA.name}"/>
                 </div>
                 <div class="control">
-                     <div class="label">비밀번호</div>
-                    <input type="password" class="form-control" value="${DATA.password}"/>
+                     <div class="label">생년월일</div>
+                    <input type="text" class="form-control" value="${DATA.birth}"/>
+                </div>
+                <div class="control">
+                     <div class="label">가입일</div>
+                    <input type="text" class="form-control" value="${DATA.jdate}"/>
                 </div>
                                 <div class="control">
                     <div class="label">이메일</div>
-                    <input type="text" class="form-control" value="${DATA.email}"/>
+                    <input type="text" class="form-control" value="${DATA.mail}"/>
                 </div>
                                 <div class="control">
                     <div class="label">주소</div>
-                    <input type="text" class="form-control" value="${DATA.address}"/>
+                    <input type="text" class="form-control" value="${DATA.add}"/>
                 </div>
                                 <div class="control">
                     <div class="label">폰번호</div>

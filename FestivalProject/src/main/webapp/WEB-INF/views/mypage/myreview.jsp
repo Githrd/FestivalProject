@@ -5,6 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<%--
+		리뷰 게시글 리스트 뷰
+		
+								2022/05/29
+								
+							코드 작성자 : 김수경
+ --%>
        <meta charset="utf-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
        <meta name="description" content="" />
@@ -20,16 +28,11 @@
        <!-- Core theme CSS (includes Bootstrap)-->
        <link rel="stylesheet" type="text/css" href="/festival/resources/css/styles.css"/>
        <link rel="stylesheet" type="text/css" href="/festival/resources/css/w3.css"/>
+       <link rel="stylesheet" type="text/css" href="/festival/resources/css/mypage.css"/>
        <script type="text/javascript" src="/festival/resources/js/jquery-3.6.0.min.js"></script>
        <script type="text/javascript" src="/festival/resources/js/mypage.js"></script>
        <style type="text/css">   
-     	.logo {
-     		margin: 0px;
-     		padding: 0px;
-     	}
-     	.brdList {
-		cursor: pointer;
-	}
+     	
      	</style>
 	
 </head>
@@ -37,7 +40,7 @@
     <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand logo" href="#page-top"><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
+                <a class="navbar-brand logo" href="/festival/"><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -96,10 +99,8 @@
 		</div>
 		
 		<hr>
-				<div class="w3-card-4 w3-button w3-small w3-right menubtn" id="wbtn">글작성</div>
+				<div class="w3-card-4 w3-button w3-small w3-right" id="wviewbtn">글작성</div>
                                       
-                </ul>
-
 
             <!-- 검색 폼 영역 -->
             <li id='liSearchOption'>
@@ -132,7 +133,7 @@
                         <option value='T'>제목</option>
                         <option value='C'>내용</option>
                     </select>
-                    <input id='txtKeyWord' />
+                    <input id='txtKeyWord'/>
                     <input type='button' value='검색'/>
                 </li>
 

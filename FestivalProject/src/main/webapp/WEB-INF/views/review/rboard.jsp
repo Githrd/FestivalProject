@@ -204,24 +204,21 @@ DB에서 목록불러와서 최대10개까지
 	</div>
 
 	<div class="w3-content w3-center mx650">
-		<div style="margin-top: 100px">
+		<div class="w3-col" style="margin-top: 200px">
 			<h1>리뷰게시판</h1>
-			<p>n개의 후기 	평점 : 4.3</p>
 		</div>
 	</div>
-	<div class="w3-button" id="rwritebtn">글쓰기</div>
-	<div class="w3-button" id="reditbtn">수정하기</div>
 
 
 
-</div>
+
 
 
 
 
 
 <!-- 리스트 게시판 시작-->
-<div class="w3-content mx650">
+
 <table class="sub_news" border="1" cellspacing="0" summary="게시판의 글제목 리스트">
 <caption>게시판 리스트</caption>
 <colgroup>
@@ -328,25 +325,157 @@ DB에서 목록불러와서 최대10개까지
 <td class="date">2022/05/05</td>
 <td class="hit">1111</td>
 </tr>
-
-
-
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[1]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
+<tr>
+<td class="title">
+<a href="#">후기 제목</a>
+<img width="13" height="12" class="pic" alt="첨부이미지" src="/FestivalProject/resources/img/ic_pic.gif"> <a class="comment" href="#">[0]</a> <img width="10" height="9" class="new" alt="새글" src="/FestivalProject/resources/img/ic_new.gif">
+</td>
+<td class="name">글쓴이</td>
+<td class="date">2022/05/05</td>
+<td class="hit">1111</td>
+</tr>
 
 <!-- tr이 제목 1줄입니다 보일 list 갯수만큼 li반복합니다.-->
 </tbody>
 </table>
-</div>
+
 <!-- 리스트 게시판 끝-->
-   
-    
-    
-        <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script type="text/javascript" src="/festival/resources/js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- 검색스크립트 -->
+	<script type="text/javascript">
+	
+	$("#value").click(function() {
+		$("#searchlist").fadeIn(200).css("display", "block");
+	})
+	
+	
+	$("#value").focusout(function() {
+		$("#searchlist").css("display", "none");
+	})
+	
+	
+	
+      function filter(){
+
+        var value, name, item, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        item = document.getElementsByClassName("item");
+
+
+        for(i=0;i<item.length;i++){
+          name = item[i].getElementsByClassName("name");
+          if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            item[i].style.display = "flex";
+          }else{
+            item[i].style.display = "none";
+          }
+        }
+      }
+</script>
