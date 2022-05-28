@@ -1,13 +1,8 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%--
-
 <%@page import="com.bbs.BoardDTO"%>
 <%@page import="com.bbs.BoardDAO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 
-<%
+<% 
  request.setCharacterEncoding("utf-8");
  String cp = request.getContextPath();
  
@@ -26,7 +21,6 @@
   dto.setEmail("");//앞에서 email은 입력 검사에 넣지 않아서 null값이 들어 갈수 있다.
  
 %>
---%>
 
 <!DOCTYPE html>
 <html>

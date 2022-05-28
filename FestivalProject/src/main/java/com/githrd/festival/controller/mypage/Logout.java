@@ -7,18 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.githrd.festival.controller.FesInter;
-/*리뷰 게시글 폼보기 컨트롤러
 
-2022/05/29
-
-코드 작성자 : 김수경
-
-*/
-public class MyReview implements FesInter {
+public class Logout implements FesInter {
 
 	@Override
 	public String exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String view = "/mypage/myreview";
+		String view = "/festival/main.blp";
+		req.setAttribute("isRedirect", true);
+		
+		req.getSession().removeAttribute("SID");
 		return view;
 	}
 

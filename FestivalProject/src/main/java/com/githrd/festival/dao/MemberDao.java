@@ -200,4 +200,46 @@ public class MemberDao {
 		}
 		return cnt;
 	}
+	
+	//회원번호로 회원 정보 조회 전담 처리함수
+	public MemberVO getMnoInfo(String id) {
+		/*
+			이함수가 데이터베이스에서 꺼내올 데이터는
+			회원 한명의 데이터이기 때문에
+			VO를 만들고 채워서 반환해주면 작업이 끝난다.
+		 */
+		MemberVO mVO = new MemberVO();
+		// con
+		con = db.getCon();
+		// sql
+		String sql = mSQL.getSQL(mSQL.SEL_ID_INFO);
+		// pstmt
+		pstmt = db.getPSTMT(con, sql);
+		try {
+			// setting variable
+			pstmt.setString(1, id);
+			// send and receive
+			rs = pstmt.executeQuery();
+			// get Data
+			rs.next();
+			// vo setting
+			mVO.setId(rs.getString("user_id"));
+			mVO.setName(rs.getString("user_name"));
+			mVO.setBirth(rs.getString("user_birth"));
+			mVO.setJdate(rs.getDate("join_date"));
+			mVO.setMail(rs.getString("user_mail"));
+			mVO.setAdd(rs.getString("user_add"));
+			mVO.setTel(rs.getString("user_tel"));
+			mVO.setSdate();
+		
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(rs);
+			db.close(pstmt);
+			db.close(con);
+		}
+		// return
+		return mVO;
+}
 }

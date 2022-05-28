@@ -27,10 +27,12 @@ public class FestivalSQL {
 			buff.append("        festival_info ");
 			buff.append("    WHERE ");
 			buff.append("        TO_DATE(sdate, 'YY/MM/DD') - TO_DATE(sysdate, 'YY/MM/DD') > 0 ");
+			buff.append("		 AND isshow = 'Y' ");
 			buff.append("    order by ");
 			buff.append("        diff asc ");
 			buff.append("    ) ");
 			buff.append("WHERE rownum < 7 ");
+
 			break;
 		}
 		return buff.toString();

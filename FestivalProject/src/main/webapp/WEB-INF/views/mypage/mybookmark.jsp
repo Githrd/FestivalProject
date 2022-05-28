@@ -5,6 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%--
+		내가 등록한 즐겨찾기 목록 보기		
+								2022/05/29
+								
+							코드 작성자 : 김수경
+ --%>
+
        <meta charset="utf-8" />
        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
        <meta name="description" content="" />
@@ -34,7 +41,7 @@
     <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand logo" href="#page-top"><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
+                <a class="navbar-brand logo" href="/festival/"><img src="/festival/resources/img/logo.png" style="width:170px; height:auto"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -68,7 +75,9 @@
    		<h1>즐겨찾기 목록</h1>
    		<hr>
                 <div class="row">
-                    <div class="col-lg-4 col-sm-6 mb-4">
+                
+       <c:forEach var="data" items="${LIST}">
+                    <div class="col-lg-4 col-sm-6 mb-4" id="${data.fno}">
                         <!-- Portfolio item 1-->
                         <div class="portfolio-item w3-card-4">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -78,44 +87,14 @@
                                 <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">축제이름</div>
-                                <div class="portfolio-caption-subheading text-muted">평점 : </div>
-                                <div class="portfolio-caption-subheading text-muted">가격 : </div>                                
+                                <div class="portfolio-caption-heading">${data.fname}</div>
+                                <div class="portfolio-caption-subheading text-muted">평점 : + ${data.score}</div>
+                                <div class="portfolio-caption-subheading text-muted">가격 : + ${data.fee}</div>                                
                             </div>
                         </div>
                      </div>
-                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item w3-card-4">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">축제이름</div>
-                                <div class="portfolio-caption-subheading text-muted">평점 : </div>
-                                <div class="portfolio-caption-subheading text-muted">가격 : </div> 
-                            </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
-                        <div class="portfolio-item w3-card-4">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
-                            </a>
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">축제이름</div>
-                                <div class="portfolio-caption-subheading text-muted">평점 : </div>
-                                <div class="portfolio-caption-subheading text-muted">가격 : </div>
-                            </div>
-                        </div>
-                     </div>
+         </c:forEach>
+
 </div>
    		</div>
    		</div>

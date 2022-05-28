@@ -22,6 +22,8 @@ public class MemberSQL {
 	
 	public final int ADD_MEMBER		= 3001;
 	
+	public final int SEL_ID_INFO		= 4002;
+	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
 		switch(code) {
@@ -100,6 +102,17 @@ public class MemberSQL {
 			buff.append("    ?, ?, ?, ?, ?, ?, ?, ? ");
 			buff.append(") ");
 			break;
+			
+		case SEL_ID_INFO:
+			buff.append("SELECT ");
+			buff.append("	user_id, user_name, user_birth, join_date, user_mail, user_add, user_tel ");
+			buff.append("FROM ");
+			buff.append("	member ");
+			buff.append("WHERE ");
+			buff.append("	isshow = 'Y' ");
+			buff.append("	AND user_id = ? ");
+			break;	
+			
 		}
 		return buff.toString();
 	}

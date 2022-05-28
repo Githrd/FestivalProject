@@ -10,6 +10,19 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ /*
+    작성자 : 윤한기
+    작성일 : 22-05-22
+    finfodetail.jsp 에 사용된 부분
+*/
+/*-----------------------------------------*/
+div ul li strong{
+  display: inline-block;
+  width:140px;
+  padding-left:15px;
+}
+/*-----------------------------------------*/
+ 
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
