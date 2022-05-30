@@ -25,7 +25,11 @@ public class MyPageSQL {
 			buff.append("    fname, fno ");
 			buff.append("FROM ");
 			buff.append("    festival_info ");
+			buff.append("WHERE ");
+			buff.append("	 isshow = 'Y' ");
 		break;
+		
+		
 		case INSERT_BOARD:
 			buff.append("INSERT INTO ");
 			buff.append("	festival_review(review_no, review_wname, review_title, review_wdate, click) ");

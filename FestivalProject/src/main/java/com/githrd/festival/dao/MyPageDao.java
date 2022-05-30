@@ -140,7 +140,7 @@ public class MyPageDao {
 		}
 		return list;
 	}
-	
+/*	
 	// 게시글 상세보기 데이터조회 전담 처리함수
 	public MyPageVO getBoardDetail(int bno) {
 		MyPageVO bVO = new MyPageVO();
@@ -179,6 +179,7 @@ public class MyPageDao {
 		}
 		return bVO;
 	}
+*/
 	public ArrayList<MyPageVO> getReviewList(){
 		ArrayList<MyPageVO> list = new ArrayList<MyPageVO>();
 		con = db.getCon();

@@ -97,6 +97,9 @@ $(document).ready(function() {
 			
 		});
 	});
+	$('#findpwbtn').click(function() {
+		$(location).attr('href', '/festival/member/findpw.fes');
+	});
 	
 	$('#findbtn1').click(function() {
 		$('#frm').attr('action', '/festival/member/findidProc.fes');

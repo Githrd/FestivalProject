@@ -1,5 +1,6 @@
 # Festival Project 요청 설계
 
+// 이승연 작성//
 --------------------------------------------------------------
 # 메인페이지 보기 요청 
 요청내용	: 	/festival/main.fes
@@ -44,17 +45,132 @@
 						성공 : /festival/main.fes
 						실패 : /festival/member/join.fes
 --------------------------------------------------------------
-
-# 마이페이지 관련 요청
+# 아이디 중복 처리 요청 
+요청내용	: 	/festival/member/idCheck.fes
+파라미터	:	id
+컨트롤러	: 	com.githrd.festival.controller.JoinProc
+뷰				:	redirect ] /festival/member/join.fes
 --------------------------------------------------------------
-요청내용	: 	/festival/mypage/mypage.fes
+# 아이디 찾기 폼보기 요청
+요청내용	: 	/festival/member/findid.fes
 파라미터	:	무
-컨트롤러	: 	com.githrd.festival.controller.Mypage
-뷰				:	/WEB-INF/views/mypage/mapge.jsp
+컨트롤러	: 	com.githrd.festival.controller.FindIdForm
+뷰				:	redirect ] /festival/member/findid.fes
+--------------------------------------------------------------
+# 아이디 찾기 처리 요청(이메일)
+요청내용	: 	/festival/member/findidProc.fes
+파라미터	:	email
+컨트롤러	: 	com.githrd.festival.controller.FindIdProc
+뷰				:	redirect ]
+						성공 : /festival/member/resultid.fes
+						실패 : /festival/member/findid.fes
+--------------------------------------------------------------
+# 아이디 찾기 처리 요청(전화번호)
+요청내용	: 	/festival/member/findidProc2.fes
+파라미터	:	tel
+컨트롤러	: 	com.githrd.festival.controller.FindIdProc2
+뷰				:	redirect ]
+						성공 : /festival/member/resultid.fes
+						실패 : /festival/member/findid.fes
+--------------------------------------------------------------
+# 아이디 찾기 결과 폼보기 요청
+요청내용	: 	/festival/member/resultid.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.ResultId
+뷰				:	redirect ] /festival/member/resultid.fes
+--------------------------------------------------------------
+# 비밀번호 찾기 폼보기 요청
+요청내용	: 	/festival/member/findpw.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.FindPwForm
+뷰				:	redirect ] /festival/member/findpw.fes
+--------------------------------------------------------------
+# 비밀번호 찾기 처리 요청
+요청내용	: 	/festival/member/findpwProc.fes
+파라미터	:	id
+컨트롤러	: 	com.githrd.festival.controller.FindPwProc
+뷰				:	redirect ] /festival/member/findpwProc.fes
+--------------------------------------------------------------
+# 비밀번호 바꾸기 폼보기 요청
+요청내용	: 	/festival/member/resultpw.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.ResultPw
+뷰				:	redirect ] /festival/member/resultpw.fes
+--------------------------------------------------------------
+# 비밀번호 바꾸기 처리 요청
+요청내용	: 	/festival/member/changePwProc.fes
+파라미터	:	pw
+컨트롤러	: 	com.githrd.festival.controller.ChangePwProc
+뷰				:	redirect ] /festival/member/changePwProc.fes
+--------------------------------------------------------------
+/////////////////////////////////////////////////////////////////
+
+# festival Project 요청 설계
+###작성자 : 김수경###
+=========================================================================
+####################### 마이페이지 요청 설계 ######################
+=========================================================================
+--------------------------------------------------------------
+# 마이페이지 보기 요청 
+요청내용	: 	/festival/main.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.MyPage
+뷰			:	/WEB-INF/views/festival/mypage.jsp
 --------------------------------------------------------------
 
+# 내정보 폼보기 요청 
+요청내용	: 	/festival/member/myInfo.fes
+파라미터	:	무
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyInfo
+뷰			:	/WEB-INF/views/festival/mypage/mypage.jsp
+--------------------------------------------------------------
 
+=========================================================================
+####################### 리뷰게시판 요청 설계 ######################
+=========================================================================
 
+-------------------------------------------------------------------------
+# 리뷰게시판 리스트 폼보기 요청
+요청내용	: 	/festival/mypage/MyReview.fes
+파라미터	:	[nowPage]
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReview
+뷰			:	/WEB-INF/views/guestBoard/myreview.jsp
+-------------------------------------------------------------------------
+# 리뷰게시판 글쓰기 폼보기 요청
+요청내용	: 	/festival/mypage/myreviewwrite.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReviewWrite
+뷰			:	/WEB-INF/views/mypage/MyReviewWrite.jsp
+-------------------------------------------------------------------------
+# 리뷰게시판 글등록 처리 요청
+요청내용	: 	/festival/mypage/MyReviewWrite.fes
+파라미터	:	body, nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyReviewWriteProc
+뷰			:	redirect ]
+						성공 :	/festival/mypage/myreview.fes 
+						실패 :	//festival/mypage/myreview.fes?nowPage=???
+-------------------------------------------------------------------------
+
+=========================================================================
+####################### 즐겨찾기 요청 설계 ######################
+=========================================================================
+
+-------------------------------------------------------------------------
+# 즐겨찾기 리스트 폼보기 요청
+요청내용	: 	/festival/mypage/mybookmark.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyBookMark
+뷰			:	/WEB-INF/views/mypage/mybookmark.jsp
+-------------------------------------------------------------------------
+# 즐겨찾기 등록 처리 요청
+요청내용	: 	/festival/mypage/mybookmark.fes
+파라미터	:	nowPage
+컨트롤러	: 	com.githrd.festival.controller.mypage.MyBookMarkProc
+뷰			:	/WEB-INF/views/mypage/mybookmark.jsp
+-------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////
+
+// 윤한기 작성 //
 # 축제 정보 관련 요청
 --------------------------------------------------------------
 # 축제정보 게시판 보기요청
@@ -72,7 +188,7 @@
 컨트롤러	: 	com.githrd.festival.controller.info.InfoDetail
 뷰			:	/WEB-INF/views/info/finfodetail.jsp
 --------------------------------------------------------------
-
+/////////////////////////////////////////////////////////////////
 
 
 

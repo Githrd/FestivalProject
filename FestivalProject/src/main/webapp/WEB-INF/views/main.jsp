@@ -170,21 +170,26 @@
         </div>
 		
 		<hr>
-<c:forEach var="data" items="${INFO}">
-			
+		
+		
+		<c:forEach var="data" items="${INFO}">
             <div class=" w3-center gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
             	<a href="">
-            	<div style="display: flex; height: 60px; margin-top:20px; align-items: center; justify-content: center;" class="w3-center">
+            	<div style="display: flex; height: 60px; margin-top:20px;
+            		align-items: center; justify-content: center;" class="w3-center">
 	            	<h4 style="padding-top:auto;">${data.fname}</h4>
             	</div>
             	<div class="w3-border w3-padding">
-                	<img src="/festival/resources/img/${data.fno}.jpg" onerror="this.src='/festival/resources/img/poster.png'" class="img-responsive fe">
+                	<img src="/festival/resources/img/${data.fno}.jpg" onerror="this.src='/festival/resources/img/poster.png'"
+                		class="img-responsive fe">
             	</div>
-                            	<p class="pi">${data.sdate} ~ ${data.edate}</p>
-                            	<p class="pi">${data.place}</p>
+                            <p class="pi">${data.sdate} ~ ${data.edate}</p>
+                            <p class="pi">${data.place}</p>
 				</a>
             </div>
-</c:forEach>          
+		</c:forEach>
+		
+		          
         </div>
             <a href="/festival/info/finfo.fes" style="float: right; font-size: 14pt;" class="w3-margin"><strong>더보기 >></strong></a>
         	
