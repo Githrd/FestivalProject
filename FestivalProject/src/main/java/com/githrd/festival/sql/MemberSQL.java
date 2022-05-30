@@ -92,6 +92,7 @@ public class MemberSQL {
 			buff.append("    user_pw = ? ");
 			buff.append("WHERE ");
 			buff.append("    user_id = ? ");
+			buff.append("    AND isshow = 'Y' ");
 			break;
 			
 		case ADD_MEMBER:

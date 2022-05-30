@@ -89,10 +89,9 @@
                         <tr>
  							<td><div class="w3-col revform-control w3-left-align">리뷰할 축제
  					<select id='selSearchOption' style="width: 70%; margin-legt: 5px;" >
-<c:forEach var="data" items="${DATA}">
-
-                        <option value=''>${data.fname}</option>
-</c:forEach>
+			<c:forEach var="data" items="${DATA}">
+					<option value=''>${data.fname}</option>
+			</c:forEach>
                     </select>
  							</div>
  							</td>

@@ -1,8 +1,8 @@
-<%@page import="com.bbs.BoardDTO"%>
-<%@page import="com.bbs.BoardDAO"%>
+<%@ page import="com.githrd.festival.bbs.Bbs" %> 
+<%@ page import="com.githrd.festival.bbs.BbsDAO" %>
 <%@ page contentType="text/html; charset=UTF-8"%>
 
-<% 
+<%
  request.setCharacterEncoding("utf-8");
  String cp = request.getContextPath();
  
@@ -15,7 +15,7 @@
  if(dto==null){//-->dto가 null값이라함을 글을 보는도중 누군가 삭제 했을 경우이다.. 그럴경우 list.jsp로 돌아가게 된다.
   response.sendRedirect(cp+"/board/list.jsp?pageNum="+pageNum);
   return;
- }
+ } 
  
  if(dto.getEmail()==null)
   dto.setEmail("");//앞에서 email은 입력 검사에 넣지 않아서 null값이 들어 갈수 있다.

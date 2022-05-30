@@ -81,7 +81,7 @@
 	<div class="row login_box" style="margin-top: 150px; margin-bottom: 500px;">
 	    <div class="col-md-12 col-xs-12" align="center">
 			<h5>환영합니다</h5>
-            <div class="outter"><img src="/festival/resources/img/img_avatar1.png<%-- ${DATA.username} --%>" class="image-circle avtimg"/></div>   
+            <div class="outter"><img src="/festival/resources/img/img_avatar4.png<%-- ${DATA.username} --%>" class="image-circle avtimg"/></div>   
 				<h4><span class="">아이디 : </span><span class="w3-rest w3-center" id="name">${DATA.id}</span></h4>
 	    </div>
         <div class="col-md-6 col-xs-6 follow line" align="center">
